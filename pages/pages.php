@@ -32,14 +32,18 @@
 | written permission from the original author(s).
 +--------------------------------------------------------*/
 
-/*$theme = array(
-	'Title' => $data['title'].' » '.$_sett->get('site_name'),
-	'Keys' => $k,
-	'Desc' => $data['description']
-);*/
-
-// TO DO Będziesz dodawać cache dla tej strony użyj: $_sett->getUns('cache', 'expire_pages') //
-
+/*
+ * To do
+ * Przekazać nagłówki do systemu
+ * $theme = array(
+		'Title' => '',
+		'Keys' => '',
+		'Desc' => ''
+	);
+ * 
+ * Będziesz dodawać cache dla tej strony użyj: 
+ * $_sett->getUns('cache', 'expire_pages')
+ */
 
 if ($_user->isLoggedIn())
 {
@@ -299,7 +303,7 @@ elseif (isNum($_route->getAction(), FALSE))
 
 
 
-			! class_exists('Tag') || $_tag = New Tag($_system, $_pdo);
+			
 			$keyword = array(); $k = array();
 			if ($keys = $_tag->getTag('PAGES', $row['id'])){
 				foreach($keys as $var){
